@@ -8,15 +8,18 @@ counter = 0
 @app.route("/")
 def initialStage():
     return"welcome to my first flask app"
-@app.route("/")
+@app.route("/hi")
 def welcome():
     global counter
     counter+=1
+    print("i am here "+ str(counter) + " times")
     return "you have viewed this for " + str(counter) + " times"
-
 welcome()
-print("haha"
-      "")
+print("1")
+welcome()
+print("2")
+welcome()
+print("3")
 @app.route("/time")
 
 def timeStamp():
