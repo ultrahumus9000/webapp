@@ -7,7 +7,7 @@ counter = 0
 
 @app.route("/")
 def initialStage():
-    return render_template("welcome.html")
+    return render_template("welcome.html", message="LINLIN")
 @app.route("/hi")
 def welcome():
     global counter
