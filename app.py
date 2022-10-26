@@ -45,7 +45,6 @@ def add_card():
     if request.method == 'POST':
         card = {"question": request.form['question'], "answer": request.form['answer']}
         db.append(card)
-        print("what is new db", db, type(db))
         save_db()
         return redirect(url_for('card_view', index=len(db) - 1))
     else:
