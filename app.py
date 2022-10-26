@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask, render_template, abort
 from datetime import datetime
 from templates.model import  db
 
@@ -25,11 +25,13 @@ def welcome():
 def timeStamp():
     return "welcome to this time" + str(datetime.today())
 
-@app.route("/card")
-def card_view():
-    card = db[0]
-    return render_template("card.html",card=card)
-
+@app.route("/card/<int:index>")
+def card_view(index):
+    try:
+        card = db[index]
+        return render_template("card.html",card=card, index=index)
+    except IndexError:
+        abort(404)
 #this is to listen port and call welcome
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0',port=8080)
