@@ -1,0 +1,22 @@
+[
+  {
+    "question": "hello",
+    "answer": "你好"
+  },
+  {
+    "question": "goodbye",
+    "answer": "你好"
+  },
+  {
+    "question": "hi",
+    "answer": "好"
+  },
+  {
+    "question": "happy",
+    "answer": "开心"
+  },
+  {
+    "question": "sad",
+    "answer": "难过"
+  }
+]

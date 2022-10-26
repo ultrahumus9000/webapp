@@ -1,5 +1,6 @@
 from flask import Flask,render_template
 from datetime import datetime
+from templates.model import  db
 
 app = Flask(__name__)
 
@@ -21,9 +22,13 @@ def welcome():
 # welcome()
 # print("3")
 @app.route("/time")
-
 def timeStamp():
     return "welcome to this time" + str(datetime.today())
+
+@app.route("/card")
+def card_view():
+    card = db[0]
+    return render_template("card.html",card=card)
 
 #this is to listen port and call welcome
 if __name__ == '__main__':
